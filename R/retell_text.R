@@ -59,12 +59,12 @@ retell_text <- function(
               rvest::html_text2()
 
             res['short_text'] <- rvest::read_html(req$sharing_url) |>
-              #  add line for title
               rvest::html_nodes(xpath = '//*[@class="content-theses svelte-h3ittf"]') |>
               rvest::html_text2() |>
               stringr::str_split('\n' ) # |> print()
 
             res['short_url'] <- req$sharing_url
+
             res['original_url'] <- url
 
             return(res)
