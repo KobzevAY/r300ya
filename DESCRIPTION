@@ -1,12 +1,19 @@
 Package: r300ya
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Title: R Interface to Yandex Servie of retelling texts in thesis with YandexGPT
+Version: 0.9
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+    person("Andrey", "Kobzev", email = "kobzev.andrew@gmail.com", 
+       role = c("aut", "cre"),
+           comment = c(ORCID = "0009-0005-6641-3072"))
+Description: Allows to automatically generate a short description of Internet pages using artificial intelligence technologies (Retelling). To generate a Retelling, the User must specify the URL of the Internet page whose description he wants to generate. For more information see official documents <https://yandex.ru/legal/300ya_termsofuse/>.
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
+Imports: 
+    httr2,
+    rvest,
+    stringr
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
