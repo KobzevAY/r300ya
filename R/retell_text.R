@@ -12,7 +12,6 @@ retell_text <- function(
     url = NULL,
     token = NULL) {
 
-
   # check URL
   if(is.null(url)) {
     message('You forgot to enter the URL!')
