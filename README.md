@@ -84,3 +84,15 @@ retell_text(url = my_url, token = my_token)
 В **r300ya** в этих случаях выдается следующее сообщение:
 
     The neural network was unable to extract the text of the article. Perhaps the article is too long, and neural networks are not yet able to retell such articles. Try another.
+
+## Получение токена
+
+Токен может получить авторизованный пользователя сервисов яндекса по
+следующей схеме
+
+<figure>
+<img src="r300ya_token.png"
+alt="Схема получения значения токена на сервисе 300.ya.ru" />
+<figcaption aria-hidden="true">Схема получения значения токена на
+сервисе 300.ya.ru</figcaption>
+</figure>
