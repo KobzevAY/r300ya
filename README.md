@@ -38,7 +38,6 @@ my_url <- 'https://habr.com/ru/news/729422/'
 my_token <- 'some_secret_information'
 
 retell_text(url = my_url, token = my_token)
-#> Check your token
 
 # $title
 # [1] "«Яндекс Браузер» научили переводить с китайского языка и автоматически накладывать русскую озвучку"
