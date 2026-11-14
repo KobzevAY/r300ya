@@ -3,51 +3,53 @@
 
 # r300ya
 
+**English** \| [Русский](README.ru.md)
+
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/KobzevAY/r300ya/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/KobzevAY/r300ya/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-Пакет **r300ya** даёт доступ из R к сервису Яндекса <https://300.ya.ru>
-через API. Сервис с помощью YandexGPT автоматически делает краткий
-пересказ интернет-страницы: заголовок и список главных тезисов.
+**r300ya** is an R interface to the Yandex service <https://300.ya.ru>.
+The service uses the YandexGPT neural network to retell a web page: it
+returns the title and a list of the main theses.
 
-## Установка
+## Installation
 
-Установить **r300ya** можно с
+Install the development version from
 [GitHub](https://github.com/KobzevAY/r300ya):
 
 ``` r
-# install.packages("pak")
-pak::pak("KobzevAY/r300ya")
+# install.packages("remotes")
+remotes::install_github("KobzevAY/r300ya")
 ```
 
-## Получение токена
+## Getting a token
 
-Токен может получить авторизованный пользователь сервисов Яндекса по
-следующей схеме:
+Any user signed in to Yandex can get a token on 300.ya.ru as shown
+below:
 
 <figure>
 <img src="man/figures/r300ya_token.png"
-alt="Схема получения значения токена на сервисе 300.ya.ru" />
-<figcaption aria-hidden="true">Схема получения значения токена на
-сервисе 300.ya.ru</figcaption>
+alt="How to get a token on 300.ya.ru" />
+<figcaption aria-hidden="true">How to get a token on
+300.ya.ru</figcaption>
 </figure>
 
-Токен лучше не писать в скриптах, а сохранить в файле `.Renviron`
-(открыть его можно командой `usethis::edit_r_environ()`):
+Rather than writing the token in your scripts, store it in your
+`.Renviron` file (open it with `usethis::edit_r_environ()`):
 
-    YA300_TOKEN=ваш_токен
+    YA300_TOKEN=your_token
 
-После перезапуска R пакет подхватит токен автоматически.
+After restarting R the package picks the token up automatically.
 
-## Пример
+## Example
 
-Основная функция `retell_text()` принимает на вход 2 параметра:
+The main function, `retell_text()`, takes two arguments:
 
-- `url`: ссылка на оригинальную страницу;
-- `token`: токен (по умолчанию берётся из переменной окружения
-  `YA300_TOKEN`).
+- `url`: the link to the original page;
+- `token`: your token (by default taken from the `YA300_TOKEN`
+  environment variable).
 
 ``` r
 library(r300ya)
@@ -64,39 +66,40 @@ res
 #> Original:  https://habr.com/ru/news/729422/
 ```
 
-Результат — список с элементами:
+The result is a list with elements:
 
-- `title`: заголовок статьи;
-- `short_text`: тезисы краткого пересказа (вектор строк);
-- `theses`: подробный пересказ, таблица с колонками `chapter` (раздел) и
-  `thesis` (тезис);
-- `short_url`: ссылка на пересказ на 300.ya.ru;
-- `original_url`: исходная ссылка.
+- `title`: the article title;
+- `short_text`: the theses of the short retelling (a character vector);
+- `theses`: the detailed retelling, a data frame with columns `chapter`
+  and `thesis`;
+- `short_url`: the link to the retelling on 300.ya.ru;
+- `original_url`: the original link.
 
-Оригинальная страница может быть на любом языке, YandexGPT попробует её
-пересказать.
+The original page can be in any language; YandexGPT will try to retell
+it. Retellings are produced in Russian.
 
-## Ограничения и ошибки
+See `vignette("r300ya")` for a longer walkthrough.
 
-Сервис не может пересказать страницу, если:
+## Limitations and errors
 
-- страница слишком длинная;
-- ссылка ведёт не на статью, а на файл, например `*.pdf`;
-- на странице слишком мало текста.
+The service cannot retell a page if:
 
-В этих случаях, а также при неверном токене `retell_text()` выдаёт
-ошибку. У каждой ошибки есть класс, поэтому их можно обрабатывать:
+- the page is too long;
+- the link points to a file (e.g. `*.pdf`) rather than an article;
+- the page has too little text.
 
-- `r300ya_error_token`: токен не указан или не подходит;
-- `r300ya_error_api`: сервис не смог пересказать страницу (в сообщении
-  указана причина);
-- `r300ya_error_parse`: не удалось разобрать страницу с пересказом
-  (скорее всего, 300.ya.ru изменил вёрстку — сообщите, пожалуйста, в
+In these cases, and when the token is wrong, `retell_text()` throws an
+error. Each error has a class, so you can handle them:
+
+- `r300ya_error_token`: the token is missing or rejected;
+- `r300ya_error_api`: the service could not retell the page (the message
+  includes the reason);
+- `r300ya_error_parse`: the retelling page could not be parsed (most
+  likely 300.ya.ru changed its layout; please report it in the
   [issues](https://github.com/KobzevAY/r300ya/issues));
-- `r300ya_error_input`: неверно указан `url`.
+- `r300ya_error_input`: `url` is invalid.
 
-Например, так можно пересказать несколько страниц и пропустить те, что
-не получились:
+For example, to retell several pages and skip the ones that fail:
 
 ``` r
 urls <- c("https://habr.com/ru/news/729422/", "https://example.com/file.pdf")
@@ -105,3 +108,9 @@ results <- lapply(urls, function(u) {
   tryCatch(retell_text(u), r300ya_error_api = function(e) NULL)
 })
 ```
+
+## Terms of use
+
+The package only automates requests you could make yourself on
+<https://300.ya.ru>. By using it you agree to the [300.ya.ru terms of
+use](https://yandex.ru/legal/300ya_termsofuse/).

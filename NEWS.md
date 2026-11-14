@@ -17,3 +17,5 @@
 * Requests use a package user agent and retry on transient errors.
 * Dropped the `stringr` dependency; requires R >= 4.1.0.
 * Tests no longer need network access or a token.
+* New vignette `vignette("r300ya")`; the README is now in English, with a
+  Russian version in `README.ru.md`.
