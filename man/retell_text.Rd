@@ -2,21 +2,50 @@
 % Please edit documentation in R/retell_text.R
 \name{retell_text}
 \alias{retell_text}
-\title{Title}
+\title{Retell a web page with YandexGPT}
 \usage{
-retell_text(url = NULL, token = NULL)
+retell_text(url, token = Sys.getenv("YA300_TOKEN"))
 }
 \arguments{
-\item{url}{URL you want to retell}
+\item{url}{A single string: the URL of the page you want to retell. The
+page can be in any language.}
 
-\item{token}{Your Token}
+\item{token}{A single string: your 300.ya.ru OAuth token. By default it is
+read from the \code{YA300_TOKEN} environment variable, so you can keep it in
+your \code{.Renviron} file instead of your scripts (see
+\code{usethis::edit_r_environ()}).}
 }
 \value{
-List
+An object of class \code{r300ya_retelling}: a list with elements
+\itemize{
+\item \code{title}: the title of the article;
+\item \code{short_text}: a character vector with the theses of the short retelling;
+\item \code{theses}: a data frame with columns \code{chapter} and \code{thesis}, the detailed
+retelling grouped by chapters (may have zero rows if the service did not
+produce one);
+\item \code{short_url}: the link to the retelling on 300.ya.ru;
+\item \code{original_url}: the URL you passed.
+}
+
+Errors are signalled with \code{\link[=stop]{stop()}} and have class \code{r300ya_error}, plus one of
+\code{r300ya_error_token} (missing or rejected token), \code{r300ya_error_api} (the
+service could not retell the page) or \code{r300ya_error_parse} (the retelling
+page has an unexpected structure), so they can be handled with
+\code{\link[=tryCatch]{tryCatch()}}.
 }
 \description{
-Title
+Sends the URL of a web page to the \href{https://300.ya.ru}{300.ya.ru} service,
+which generates a short retelling (a list of theses) with YandexGPT, and
+returns the result as an R object.
 }
 \examples{
-retell_text(url = 'your_url', token = 'your_token')
+\dontrun{
+# Sys.setenv(YA300_TOKEN = "your_token") or put it in .Renviron
+res <- retell_text("https://habr.com/ru/news/729422/")
+res$short_text
+
+# Several pages, skipping the ones that fail
+urls <- c("https://habr.com/ru/news/729422/", "https://example.com")
+results <- lapply(urls, function(u) tryCatch(retell_text(u), r300ya_error = function(e) NULL))
+}
 }
