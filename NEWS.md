@@ -19,3 +19,5 @@
 * Tests no longer need network access or a token.
 * New vignette `vignette("r300ya")`; the README is now in English, with a
   Russian version in `README.ru.md`.
+* Package website: <https://kobzevay.github.io/r300ya/>.
+* Documented the main restrictions of the 300.ya.ru terms of use.

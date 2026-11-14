@@ -13,6 +13,8 @@
   `httr2::local_mocked_responses()`. The only live test is skipped on CRAN
   and when no token is set.
 * The package automates requests that a user can make on 300.ya.ru
-  themselves, with their own token. Users are pointed to the service's terms
-  of use <https://yandex.ru/legal/300ya_termsofuse/> in the README and the
-  vignette.
+  themselves, with their own token. The service's terms of use
+  <https://yandex.ru/legal/300ya_termsofuse/> do not prohibit programmatic
+  access; they restrict use to personal, non-commercial purposes and forbid
+  using retellings to train AI models. These restrictions are stated in the
+  README, the vignette and `?retell_text`.

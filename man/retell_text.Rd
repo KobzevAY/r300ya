@@ -38,6 +38,16 @@ Sends the URL of a web page to the \href{https://300.ya.ru}{300.ya.ru} service,
 which generates a short retelling (a list of theses) with YandexGPT, and
 returns the result as an R object.
 }
+\section{Terms of use}{
+
+r300ya is an unofficial package, not affiliated with Yandex. By using it you
+accept the \href{https://yandex.ru/legal/300ya_termsofuse/}{300.ya.ru terms of use}:
+among other things, the service and the retellings may be used for personal,
+non-commercial purposes only and must not be used to train or test AI
+models. Retellings of web pages are published on 300.ya.ru and are
+available to anyone with the link.
+}
+
 \examples{
 \dontrun{
 # Sys.setenv(YA300_TOKEN = "your_token") or put it in .Renviron

@@ -168,6 +168,20 @@ layout of its pages. Please report it at
 
 ## Terms of use
 
-The package only automates requests you could make yourself on
-<https://300.ya.ru>. By using it you agree to the
-[300.ya.ru terms of use](https://yandex.ru/legal/300ya_termsofuse/).
+r300ya is an unofficial package, not affiliated with Yandex. It only automates
+requests you could make yourself on <https://300.ya.ru> with your own token,
+and by using it you accept the
+[300.ya.ru terms of use](https://yandex.ru/legal/300ya_termsofuse/) and the
+[Yandex user agreement](https://yandex.ru/legal/rules/). In particular (as of
+the version of 8 February 2024):
+
+* the service and the retellings may be used **for personal, non-commercial
+  purposes only** (clauses 2.4, 3.2);
+* retellings **must not be used to train or test AI models** (clause 3.6);
+* you must not retell or share pages with illegal, offensive or
+  copyright-infringing content (clause 2.5), and you are responsible for
+  checking the retellings;
+* retellings of web pages are published on 300.ya.ru and are available to
+  anyone with the link (clause 2.1.1);
+* Yandex may restrict automated access to its services (user agreement), so
+  do not send large numbers of requests.

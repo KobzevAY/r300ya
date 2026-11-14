@@ -1,0 +1,28 @@
+url: https://kobzevay.github.io/r300ya/
+
+template:
+  bootstrap: 5
+  light-switch: true
+  bslib:
+    primary: "#e4447f"
+    base_font: {google: "Inter"}
+    heading_font: {google: "Inter"}
+    code_font: {google: "JetBrains Mono"}
+
+home:
+  title: "r300ya: retell web pages with YandexGPT from R"
+  links:
+  - text: README на русском
+    href: https://github.com/KobzevAY/r300ya/blob/master/README.ru.md
+  - text: 300.ya.ru terms of use
+    href: https://yandex.ru/legal/300ya_termsofuse/
+
+navbar:
+  structure:
+    left: [intro, reference, news]
+    right: [search, github, lightswitch]
+
+reference:
+- title: Retelling
+  contents:
+  - retell_text

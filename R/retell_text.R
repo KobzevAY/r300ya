@@ -26,6 +26,14 @@
 #' page has an unexpected structure), so they can be handled with
 #' [tryCatch()].
 #'
+#' @section Terms of use:
+#' r300ya is an unofficial package, not affiliated with Yandex. By using it you
+#' accept the [300.ya.ru terms of use](https://yandex.ru/legal/300ya_termsofuse/):
+#' among other things, the service and the retellings may be used for personal,
+#' non-commercial purposes only and must not be used to train or test AI
+#' models. Retellings of web pages are published on 300.ya.ru and are
+#' available to anyone with the link.
+#'
 #' @export
 #'
 #' @examples
