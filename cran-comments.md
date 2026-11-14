@@ -1,3 +1,9 @@
+## Test environments
+
+* local Windows 10, R 4.5.1
+* GitHub Actions: macOS (release), Windows (release),
+  Ubuntu (devel, release, oldrel-1)
+
 ## R CMD check results
 
 0 errors | 0 warnings | 1 note
