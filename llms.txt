@@ -15,7 +15,7 @@ Install the development version from
 
 ``` r
 
-# install.packages("remotes")
+install.packages("remotes")
 remotes::install_github("KobzevAY/r300ya")
 ```
 

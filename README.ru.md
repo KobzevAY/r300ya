@@ -16,8 +16,8 @@
 
 ``` r
 
-# install.packages("pak")
-pak::pak("KobzevAY/r300ya")
+install.packages("remotes")
+remotes::install_github("KobzevAY/r300ya")
 ```
 
 ## Получение токена
