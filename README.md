@@ -22,7 +22,7 @@ Install the development version from
 [GitHub](https://github.com/KobzevAY/r300ya):
 
 ``` r
-# install.packages("remotes")
+install.packages("remotes")
 remotes::install_github("KobzevAY/r300ya")
 ```
 
