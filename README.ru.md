@@ -1,7 +1,6 @@
 # r300ya
 
-[English](https://kobzevay.github.io/r300ya/README.md) \| **Русский** \|
-[Сайт пакета](https://kobzevay.github.io/r300ya/)
+[English](https://kobzevay.github.io/r300ya/README.md) \| **Русский**
 
 [![R-CMD-check](https://github.com/KobzevAY/r300ya/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/KobzevAY/r300ya/actions/workflows/R-CMD-check.yaml)
 

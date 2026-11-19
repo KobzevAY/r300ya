@@ -2,7 +2,6 @@
 
 **English** \|
 [Русский](https://github.com/KobzevAY/r300ya/blob/master/README.ru.md)
-\| [Website](https://kobzevay.github.io/r300ya/)
 
 **r300ya** is an R interface to the Yandex service <https://300.ya.ru>.
 The service uses the YandexGPT neural network to retell a web page: it
