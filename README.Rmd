@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 
 # r300ya
 
-**English** | [Русский](https://github.com/KobzevAY/r300ya/blob/master/README.ru.md) | [Website](https://kobzevay.github.io/r300ya/)
+**English** | [Русский](https://github.com/KobzevAY/r300ya/blob/master/README.ru.md)
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/KobzevAY/r300ya/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/KobzevAY/r300ya/actions/workflows/R-CMD-check.yaml)

@@ -5,7 +5,6 @@
 
 **English** \|
 [Русский](https://github.com/KobzevAY/r300ya/blob/master/README.ru.md)
-\| [Website](https://kobzevay.github.io/r300ya/)
 
 <!-- badges: start -->
 

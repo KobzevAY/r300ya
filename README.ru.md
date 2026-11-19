@@ -2,7 +2,7 @@
 
 # r300ya
 
-[English](README.md) | **Русский** | [Сайт пакета](https://kobzevay.github.io/r300ya/)
+[English](README.md) | **Русский**
 
 <!-- badges: start -->
 
